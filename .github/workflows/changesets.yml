@@ -42,8 +42,8 @@ jobs:
           title: 'chore: version packages'
           commit: 'chore: version packages'
           createGithubReleases: ${{ github.ref == 'refs/heads/master' }}
-          publish: yarn changeset publish
-          version: yarn changeset version
+          publish: yarn changeset:publish
+          version: yarn changeset:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
