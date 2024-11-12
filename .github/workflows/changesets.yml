@@ -34,6 +34,7 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --immutable
+        shell: bash
 
       - name: PR or publish
         uses: changesets/action@v1
@@ -41,8 +42,8 @@ jobs:
           title: 'chore: version packages'
           commit: 'chore: version packages'
           createGithubReleases: ${{ github.ref == 'refs/heads/master' }}
-          publish: yarn run changeset:publish
-          version: yarn run changeset:version
+          publish: yarn changeset:publish
+          version: yarn changeset:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
