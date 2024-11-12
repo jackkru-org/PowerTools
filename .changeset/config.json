@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "thepower/PowerTools" }],
+  "changelog": ["@changesets/changelog-github", { "repo": "jackkru-org/PowerTools" }],
   "commit": false,
   "fixed": [],
   "linked": [],
