@@ -26,11 +26,6 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
-      - name: Set Git User
-        run: |
-          git config --global user.name "Power DCloud"
-          git config --global user.email "info@thepower.io"
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
