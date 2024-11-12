@@ -2,7 +2,7 @@ import { Flags } from '@oclif/core'
 import jsonwebtoken from 'jsonwebtoken'
 import { promises } from 'node:fs'
 import { prompt } from 'enquirer'
-import { EvmContract } from '@thepowereco/tssdk'
+import { EvmContract } from '@jackkru-org/tssdk'
 import axios from 'axios'
 import { Listr, color } from 'listr2'
 import { initializeNetworkApi, loadWallet } from '../../helpers/network.helper.js'
@@ -121,7 +121,12 @@ export default class ContainerUpload extends BaseCommand {
       chain,
       isEth
     } = flags
+
     const importedWallet = await loadWallet(keyFilePath, password, isEth)
+
+    if (!importedWallet) {
+      throw new Error('No wallet found.')
+    }
 
     // Initialize network API
     const networkApi = await initializeNetworkApi({

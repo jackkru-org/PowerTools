@@ -1,5 +1,5 @@
 import { Flags, ux } from '@oclif/core'
-import { WalletApi } from '@thepowereco/tssdk'
+import { WalletApi } from '@jackkru-org/tssdk'
 import { colorize } from 'json-colorizer'
 
 import color from '@oclif/color'
@@ -67,6 +67,11 @@ export default class AccSendSk extends BaseCommand {
     ux.action.start('Loading')
 
     const importedWallet = await loadWallet(keyFilePath, password, isEth)
+
+    if (!importedWallet) {
+      throw new Error('No wallet found.')
+    }
+
     const networkApi = await initializeNetworkApi({
       address: importedWallet.address,
       defaultChain: bootstrapChain,

@@ -1,6 +1,6 @@
 import { Flags, ux } from '@oclif/core'
 import color from '@oclif/color'
-import { EvmContract } from '@thepowereco/tssdk'
+import { EvmContract } from '@jackkru-org/tssdk'
 import cliConfig from '../../config/cli.js'
 import { BaseCommand } from '../../baseCommand.js'
 import { initializeNetworkApi, loadWallet } from '../../helpers/network.helper.js'
@@ -70,6 +70,11 @@ export default class ProviderSetUrl extends BaseCommand {
     ux.action.start('Loading')
 
     const importedWallet = await loadWallet(keyFilePath, password, isEth)
+
+    if (!importedWallet) {
+      throw new Error('No wallet found.')
+    }
+
     const networkApi = await initializeNetworkApi({ address: importedWallet.address, chain })
     const ordersContract = new EvmContract(networkApi, ordersScAddress)
 

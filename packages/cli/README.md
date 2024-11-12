@@ -1,14 +1,14 @@
-# @thepowereco/cli
+# @jackkru-org/cli
 
 the power cli
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/@thepowereco/cli.svg)](https://npmjs.org/package/@thepowereco/cli)
-[![Downloads/week](https://img.shields.io/npm/dw/@thepowereco/cli.svg)](https://npmjs.org/package/@thepowereco/cli)
+[![Version](https://img.shields.io/npm/v/@jackkru-org/cli.svg)](https://npmjs.org/package/@jackkru-org/cli)
+[![Downloads/week](https://img.shields.io/npm/dw/@jackkru-org/cli.svg)](https://npmjs.org/package/@jackkru-org/cli)
 
 <!-- toc -->
 
-- [@thepowereco/cli](#thepowerecocli)
+- [@jackkru-org/cli](#thepowerecocli)
 - [Usage](#usage)
 - [Commands](#commands)
 <!-- tocstop -->
@@ -18,11 +18,11 @@ the power cli
 <!-- usage -->
 
 ```sh-session
-$ npm install -g @thepowereco/cli
+$ npm install -g @jackkru-org/cli
 $ tpe COMMAND
 running command...
 $ tpe (--version)
-@thepowereco/cli/1.12.13 linux-x64 node-v18.20.4
+@jackkru-org/cli/1.12.13 linux-x64 node-v18.20.4
 $ tpe --help [COMMAND]
 USAGE
   $ tpe COMMAND

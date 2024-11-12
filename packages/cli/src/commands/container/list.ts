@@ -1,5 +1,5 @@
 import { Flags, ux } from '@oclif/core'
-import { AddressApi, EvmContract } from '@thepowereco/tssdk'
+import { AddressApi, EvmContract } from '@jackkru-org/tssdk'
 import Table from 'cli-table3'
 import color from '@oclif/color'
 import { isAddress } from 'viem/utils'
@@ -54,6 +54,11 @@ export default class ContainerList extends BaseCommand {
 
     // Initialize network API and wallet
     const importedWallet = await loadWallet(keyFilePath, password, isEth)
+
+    if (!importedWallet) {
+      throw new Error('No wallet found.')
+    }
+
     const networkApi = await initializeNetworkApi({ address: importedWallet.address, chain })
 
     // Initialize EVM core and orders contract

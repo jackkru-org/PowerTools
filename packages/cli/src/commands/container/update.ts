@@ -1,6 +1,6 @@
 import { Flags, ux } from '@oclif/core'
 import crypto from 'crypto'
-import { EvmContract } from '@thepowereco/tssdk'
+import { EvmContract } from '@jackkru-org/tssdk'
 import color from '@oclif/color'
 import { initializeNetworkApi, loadWallet } from '../../helpers/network.helper.js'
 import cliConfig from '../../config/cli.js'
@@ -84,6 +84,10 @@ export default class ContainerUpdate extends BaseCommand {
 
     // Load wallet
     const importedWallet = await loadWallet(keyFilePath, password, isEth)
+
+    if (!importedWallet) {
+      throw new Error('No wallet found.')
+    }
 
     // Initialize network API
     const networkApi = await initializeNetworkApi({ address: importedWallet.address })

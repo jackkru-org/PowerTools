@@ -1,4 +1,4 @@
-import { AddressApi } from '@thepowereco/tssdk'
+import { AddressApi } from '@jackkru-org/tssdk'
 
 type ParsedItem =
   | number

@@ -1,5 +1,5 @@
 import { Flags, ux } from '@oclif/core'
-import { EvmContract } from '@thepowereco/tssdk'
+import { EvmContract } from '@jackkru-org/tssdk'
 import { readFileSync } from 'node:fs'
 
 import color from '@oclif/color'
@@ -93,6 +93,10 @@ export default class ContractSet extends BaseCommand {
 
     // Load wallet
     const importedWallet = await loadWallet(keyFilePath, password, isEth)
+
+    if (!importedWallet) {
+      throw new Error('No wallet found.')
+    }
 
     // Initialize network API
     const networkApi = await initializeNetworkApi({

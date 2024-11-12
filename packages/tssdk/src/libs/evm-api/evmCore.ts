@@ -21,7 +21,7 @@ export class EvmContract {
     this.address = address
   }
 
-  public scGet<
+  public async scGet<
     const TAbi extends Abi | readonly unknown[],
     TFunctionName extends ContractFunctionName<TAbi> | undefined = undefined,
     const TArgs extends ContractFunctionArgs<
@@ -36,10 +36,11 @@ export class EvmContract {
   >(parameters: EncodeFunctionDataParameters<TAbi, TFunctionName>) {
     const { args, abi, functionName } = parameters as EncodeFunctionDataParameters
 
-    return this.network.executeCall(
+    const result = await this.network.executeCall(
       { args, abi, functionName },
       { address: this.address }
-    ) as DecodeFunctionResultReturnType<TAbi, TFunctionName, TArgs>
+    )
+    return result as DecodeFunctionResultReturnType<TAbi, TFunctionName, TArgs>
   }
 
   public async scSet<

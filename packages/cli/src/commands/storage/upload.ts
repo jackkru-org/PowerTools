@@ -1,5 +1,5 @@
 import { Command, Flags } from '@oclif/core'
-import { AddressApi, EvmContract } from '@thepowereco/tssdk'
+import { AddressApi, EvmContract } from '@jackkru-org/tssdk'
 import { Listr } from 'listr2'
 import { resolve } from 'node:path'
 import color from '@oclif/color'
@@ -101,6 +101,10 @@ export default class StorageUpload extends Command {
       const expire = BigInt(60 * 60 * 24 * 30)
 
       const importedWallet = await loadWallet(keyFilePath, password, isEth)
+
+      if (!importedWallet) {
+        throw new Error('No wallet found.')
+      }
 
       /*
        * Await storageSc.scSet(

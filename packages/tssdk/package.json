@@ -1,8 +1,8 @@
 {
-  "name": "@thepowereco/tssdk",
+  "name": "@jackkru-org/tssdk",
   "version": "2.2.10",
-  "main": "./dist/esm/exports/index.js",
-  "types": "./dist/types/exports/index.d.ts",
+  "main": "./dist/esm/src/index.js",
+  "types": "./dist/types/src/index.d.ts",
   "description": "thepower tssdk",
   "author": "thepower",
   "type": "module",

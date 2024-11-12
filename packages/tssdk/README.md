@@ -30,12 +30,12 @@ The Power SDK contains the following modules:
 **Power SDK**
 
 ```bash
-npm i @thepowereco/tssdk
+npm i @jackkru-org/tssdk
 ```
 
 **Useful links:**
 
-- [NPM](https://www.npmjs.com/package/@thepowereco/tssdk)
+- [NPM](https://www.npmjs.com/package/@jackkru-org/tssdk)
 - [GitHub](https://github.com/thepower/power_hub/tree/master/packages/tssdk/src/libs)
 - [Report an issue](https://github.com/thepower/power_hub/issues)
   [The Power API Reference](https://doc.thepower.io/docs/Build/api/api-reference)

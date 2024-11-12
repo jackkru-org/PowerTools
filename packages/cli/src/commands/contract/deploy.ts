@@ -1,5 +1,5 @@
 import { Flags, ux } from '@oclif/core'
-import { TransactionsApi } from '@thepowereco/tssdk'
+import { TransactionsApi } from '@jackkru-org/tssdk'
 import { readFileSync } from 'node:fs'
 
 import color from '@oclif/color'
@@ -119,6 +119,10 @@ export default class ContractDeploy extends BaseCommand {
     // Load wallet
     const importedWallet = await loadWallet(keyFilePath, password, !inPlace)
 
+    if (!importedWallet) {
+      throw new Error('No wallet found.')
+    }
+
     // Initialize network API
     const networkApi = await initializeNetworkApi({
       address: importedWallet.address,
@@ -141,6 +145,7 @@ export default class ContractDeploy extends BaseCommand {
         inPlace
       }
     )
+
     // Send the prepared transaction
     const result = (await networkApi.sendPreparedTX(deployTX)) as { txId?: string }
 

@@ -2,7 +2,7 @@ import { Flags, ux } from '@oclif/core'
 import crypto from 'crypto'
 import { readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
-import { AddressApi, EvmContract } from '@thepowereco/tssdk'
+import { AddressApi, EvmContract } from '@jackkru-org/tssdk'
 import color from '@oclif/color'
 import { prompt } from 'enquirer'
 import { isAddress } from 'viem/utils'
@@ -77,6 +77,11 @@ export default class ContainerCreate extends BaseCommand {
     ux.action.start('Loading')
 
     const importedWallet = await loadWallet(keyFilePath, password, isEth)
+
+    if (!importedWallet) {
+      throw new Error('No wallet found.')
+    }
+
     const networkApi = await initializeNetworkApi({ address: importedWallet.address, chain })
 
     const ordersContract = new EvmContract(networkApi, ordersScAddress)

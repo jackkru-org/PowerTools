@@ -12,13 +12,13 @@ These tools will help you develop DApps and use The Power DCloud services.
 **Power SDK**
 
 ```bash
-npm i @thepowereco/tssdk
+npm i @jackkru-org/tssdk
 ```
 
 **Power CLI**
 
 ```bash
-npm i @thepowereco/cli
+npm i @jackkru-org/cli
 ```
 
 ## Useful links

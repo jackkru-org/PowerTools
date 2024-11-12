@@ -1,5 +1,5 @@
 import { Command, Flags, ux } from '@oclif/core'
-import { EvmContract } from '@thepowereco/tssdk'
+import { EvmContract } from '@jackkru-org/tssdk'
 // Import Table from 'cli-table3';
 
 import color from '@oclif/color'

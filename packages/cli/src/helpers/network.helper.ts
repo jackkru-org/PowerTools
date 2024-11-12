@@ -1,4 +1,4 @@
-import { NetworkApi, WalletApi } from '@thepowereco/tssdk'
+import { NetworkApi, WalletApi } from '@jackkru-org/tssdk'
 import { readFileSync } from 'node:fs'
 import { prompt } from 'enquirer'
 import { ux } from '@oclif/core'

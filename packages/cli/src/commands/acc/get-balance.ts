@@ -1,5 +1,5 @@
 import { Flags, ux } from '@oclif/core'
-import { WalletApi } from '@thepowereco/tssdk'
+import { WalletApi } from '@jackkru-org/tssdk'
 import { colorize } from 'json-colorizer'
 
 import color from '@oclif/color'
@@ -54,9 +54,10 @@ export default class AccGetBalance extends BaseCommand {
     ux.action.start('Loading')
 
     let walletAddress = address
+
     if (keyFilePath) {
       const importedWallet = await loadWallet(keyFilePath, password, isEth)
-      walletAddress = importedWallet.address
+      walletAddress = importedWallet?.address
     }
 
     if (!walletAddress) {

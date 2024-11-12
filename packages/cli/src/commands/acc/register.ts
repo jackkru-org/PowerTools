@@ -1,6 +1,6 @@
 import { color } from '@oclif/color'
 import { Flags, ux } from '@oclif/core'
-import { CryptoApi, NetworkApi, NetworkEnum, WalletApi } from '@thepowereco/tssdk'
+import { CryptoApi, NetworkApi, NetworkEnum, WalletApi } from '@jackkru-org/tssdk'
 import { prompt } from 'enquirer'
 import { colorize } from 'json-colorizer'
 import { writeFileSync } from 'node:fs'
@@ -38,7 +38,7 @@ Register a new account on a specified chain without saving the data to a file.`
       description: 'Path to save the exported file',
       exclusive: ['noSave']
     }),
-    hint: Flags.string({ char: 'h', description: 'Hint for the account password' }),
+    hint: Flags.string({ char: 'h', description: 'Hint for the account password', default: '' }),
     network: Flags.string({
       char: 'n',
       description: 'Specify the network',
@@ -114,13 +114,19 @@ Register a new account on a specified chain without saving the data to a file.`
     acc: AccountData
     defaultFileName: string
     filePath?: string
-    hint?: string
+    hint: string
     noSave?: boolean
     password: string
     isEth?: boolean
   }) {
     const { acc, defaultFileName, filePath, hint, noSave, password, isEth } = params
-    const exportedData = WalletApi.getExportData(acc.wif, acc.address, password, hint, isEth)
+    const exportedData = WalletApi.getExportData({
+      wif: acc.wif,
+      address: acc.address,
+      password,
+      hint,
+      isEth
+    })
     this.log(colorize(acc))
     if (!noSave) {
       const savePath = this.getSavePath(filePath, defaultFileName)
@@ -160,7 +166,7 @@ Register a new account on a specified chain without saving the data to a file.`
 
   private async promptForRegistration(params: {
     filePath?: string
-    hint?: string
+    hint: string
     noSave?: boolean
     password: string
     referrer?: string
@@ -195,7 +201,7 @@ Register a new account on a specified chain without saving the data to a file.`
 
   private async registerEthAccount(params: {
     filePath?: string
-    hint?: string
+    hint: string
     noSave?: boolean
     password: string
     seed?: string
@@ -233,7 +239,7 @@ Register a new account on a specified chain without saving the data to a file.`
   private async registerAccountOnChain(params: {
     chain: number
     filePath?: string
-    hint?: string
+    hint: string
     noSave?: boolean
     password: string
     referrer?: string
@@ -257,7 +263,7 @@ Register a new account on a specified chain without saving the data to a file.`
 
   private async registerAccountOnNetwork(params: {
     filePath?: string
-    hint?: string
+    hint: string
     network: string
     noSave?: boolean
     password: string

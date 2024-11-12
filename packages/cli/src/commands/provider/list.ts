@@ -1,5 +1,5 @@
 import { Flags, ux } from '@oclif/core'
-import { AddressApi, EvmContract } from '@thepowereco/tssdk'
+import { AddressApi, EvmContract } from '@jackkru-org/tssdk'
 import Table from 'cli-table3'
 import color from '@oclif/color'
 import { isAddress } from 'viem/utils'
@@ -69,6 +69,11 @@ export default class ProviderList extends BaseCommand {
       providerOwnerAddress = address
     } else if (keyFilePath) {
       const importedWallet = await loadWallet(keyFilePath, password, isEth)
+
+      if (!importedWallet) {
+        throw new Error('No wallet found.')
+      }
+
       providerOwnerAddress = importedWallet.address
     }
     const networkApi = await initializeNetworkApi({
@@ -147,9 +152,11 @@ export default class ProviderList extends BaseCommand {
             functionName: 'ownerOf',
             args: [tokenId]
           })
+
+          const evmAddress = owner && AddressApi.evmAddressToHexAddress(owner)
           const ownerAddress =
-            owner && AddressApi.isEvmAddressValid(owner)
-              ? AddressApi.hexToTextAddress(AddressApi.evmAddressToHexAddress(owner))
+            evmAddress && AddressApi.isEvmAddressValid(owner)
+              ? AddressApi.hexToTextAddress(evmAddress)
               : owner
 
           const url = await ordersContract.scGet({
