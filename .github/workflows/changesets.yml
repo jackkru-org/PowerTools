@@ -26,9 +26,6 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
-      - name: Prepare Yarn
-        run: corepack prepare yarn@4.5.1 --activate
-
       - name: Set Git User
         run: |
           git config --global user.name "Power DCloud"
@@ -42,7 +39,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --immutable
-        shell: bash
 
       - name: PR or publish
         uses: changesets/action@v1
@@ -50,8 +46,8 @@ jobs:
           title: 'chore: version packages'
           commit: 'chore: version packages'
           createGithubReleases: ${{ github.ref == 'refs/heads/master' }}
-          publish: yarn changeset:publish
-          version: yarn changeset:version
+          publish: yarn run changeset:publish
+          version: yarn run changeset:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
