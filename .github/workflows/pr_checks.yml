@@ -33,18 +33,17 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - name: setup-node
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-
-      - name: Enable Corepack and Set Yarn Version
-        run: |
-          corepack enable
-          corepack prepare yarn@4.5.1 --activate
+          cache: 'yarn'
 
       - name: install
-        run: yarn install --immutable
+        run: yarn install
 
       - name: build
         run: yarn build
@@ -63,6 +62,9 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: setup-node
         uses: actions/setup-node@v3
