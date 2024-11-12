@@ -38,11 +38,13 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: Enable Corepack
-        run: corepack enable yarn
+      - name: Enable Corepack and Set Yarn Version
+        run: |
+          corepack enable
+          corepack prepare yarn@4.5.1 --activate
 
       - name: install
-        run: yarn install
+        run: yarn install --immutable
 
       - name: build
         run: yarn build
