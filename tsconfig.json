@@ -21,7 +21,6 @@
     "noImplicitOverride": true,
     "noFallthroughCasesInSwitch": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedIndexedAccess": true,
     "verbatimModuleSyntax": true,
     "sourceMap": true,
     "incremental": true
