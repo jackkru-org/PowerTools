@@ -12,14 +12,10 @@
       ],
       "flags": {
         "address": {
-          "aliases": [
-            "adr"
-          ],
+          "aliases": ["adr"],
           "char": "a",
           "description": "Wallet address",
-          "exclusive": [
-            "keyFilePath"
-          ],
+          "exclusive": ["keyFilePath"],
           "name": "address",
           "hasDynamicHelp": false,
           "multiple": false,
@@ -45,9 +41,7 @@
         "keyFilePath": {
           "char": "k",
           "description": "Path to the key file",
-          "exclusive": [
-            "address"
-          ],
+          "exclusive": ["address"],
           "name": "keyFilePath",
           "hasDynamicHelp": false,
           "multiple": false,
@@ -79,14 +73,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "acc",
-        "get-balance.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "acc", "get-balance.js"]
     },
     "acc:register": {
       "aliases": [],
@@ -102,9 +89,7 @@
         "chain": {
           "char": "c",
           "description": "Specify the chain",
-          "exclusive": [
-            "network"
-          ],
+          "exclusive": ["network"],
           "name": "chain",
           "hasDynamicHelp": false,
           "multiple": false,
@@ -113,9 +98,7 @@
         "filePath": {
           "char": "f",
           "description": "Path to save the exported file",
-          "exclusive": [
-            "noSave"
-          ],
+          "exclusive": ["noSave"],
           "name": "filePath",
           "hasDynamicHelp": false,
           "multiple": false,
@@ -133,25 +116,17 @@
         "network": {
           "char": "n",
           "description": "Specify the network",
-          "exclusive": [
-            "chain"
-          ],
+          "exclusive": ["chain"],
           "name": "network",
           "hasDynamicHelp": false,
           "multiple": false,
-          "options": [
-            "devnet",
-            "testnet",
-            "appchain"
-          ],
+          "options": ["devnet", "testnet", "appchain"],
           "type": "option"
         },
         "noSave": {
           "char": "x",
           "description": "Do not save the exported file",
-          "exclusive": [
-            "filePath"
-          ],
+          "exclusive": ["filePath"],
           "name": "noSave",
           "allowNo": false,
           "type": "boolean"
@@ -206,14 +181,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "acc",
-        "register.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "acc", "register.js"]
     },
     "acc:send-sk": {
       "aliases": [],
@@ -338,14 +306,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "acc",
-        "send-sk.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "acc", "send-sk.js"]
     },
     "container:actions": {
       "aliases": [],
@@ -405,14 +366,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "container",
-        "actions.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "container", "actions.js"]
     },
     "container:create": {
       "aliases": [],
@@ -511,14 +465,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "container",
-        "create.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "container", "create.js"]
     },
     "container:list": {
       "aliases": [],
@@ -581,14 +528,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "container",
-        "list.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "container", "list.js"]
     },
     "container:update": {
       "aliases": [],
@@ -688,14 +628,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "container",
-        "update.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "container", "update.js"]
     },
     "container:upload": {
       "aliases": [],
@@ -811,14 +744,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "container",
-        "upload.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "container", "upload.js"]
     },
     "provider:create": {
       "aliases": [],
@@ -899,14 +825,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "provider",
-        "create.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "provider", "create.js"]
     },
     "provider:list": {
       "aliases": [],
@@ -920,9 +839,7 @@
         "keyFilePath": {
           "char": "k",
           "description": "Path to the key file (used for filtering by owner)",
-          "exclusive": [
-            "address"
-          ],
+          "exclusive": ["address"],
           "name": "keyFilePath",
           "required": false,
           "hasDynamicHelp": false,
@@ -942,10 +859,7 @@
         "address": {
           "char": "r",
           "description": "Filter by address",
-          "exclusive": [
-            "keyFilePath",
-            "password"
-          ],
+          "exclusive": ["keyFilePath", "password"],
           "name": "address",
           "required": false,
           "hasDynamicHelp": false,
@@ -994,14 +908,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "provider",
-        "list.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "provider", "list.js"]
     },
     "provider:set-url": {
       "aliases": [],
@@ -1091,14 +998,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "provider",
-        "set-url.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "provider", "set-url.js"]
     },
     "storage:tasklist": {
       "aliases": [],
@@ -1154,22 +1054,13 @@
       "strict": true,
       "enableJsonFlag": false,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "storage",
-        "tasklist.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "storage", "tasklist.js"]
     },
     "storage:upload": {
       "aliases": [],
       "args": {},
       "description": "Upload application files to the storage",
-      "examples": [
-        "<%= config.bin %> <%= command.id %> ./tp-cli.json"
-      ],
+      "examples": ["<%= config.bin %> <%= command.id %> ./tp-cli.json"],
       "flags": {
         "bootstrapChain": {
           "char": "b",
@@ -1241,14 +1132,7 @@
       "strict": true,
       "enableJsonFlag": false,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "storage",
-        "upload.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "storage", "upload.js"]
     },
     "contract:deploy": {
       "aliases": [],
@@ -1263,10 +1147,7 @@
         "jsonPath": {
           "char": "j",
           "description": "Path to the JSON file",
-          "exclusive": [
-            "abiPath",
-            "binPath"
-          ],
+          "exclusive": ["abiPath", "binPath"],
           "name": "jsonPath",
           "hasDynamicHelp": false,
           "multiple": false,
@@ -1275,9 +1156,7 @@
         "abiPath": {
           "char": "a",
           "description": "Path to the ABI file",
-          "exclusive": [
-            "jsonPath"
-          ],
+          "exclusive": ["jsonPath"],
           "name": "abiPath",
           "hasDynamicHelp": false,
           "multiple": false,
@@ -1286,9 +1165,7 @@
         "binPath": {
           "char": "b",
           "description": "Path to the binary file",
-          "exclusive": [
-            "jsonPath"
-          ],
+          "exclusive": ["jsonPath"],
           "name": "binPath",
           "hasDynamicHelp": false,
           "multiple": false,
@@ -1363,14 +1240,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "contract",
-        "deploy.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "contract", "deploy.js"]
     },
     "contract:get": {
       "aliases": [],
@@ -1392,9 +1262,7 @@
           "type": "option"
         },
         "address": {
-          "aliases": [
-            "adr"
-          ],
+          "aliases": ["adr"],
           "char": "d",
           "description": "Smart contract address",
           "name": "address",
@@ -1429,14 +1297,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "contract",
-        "get.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "contract", "get.js"]
     },
     "contract:set": {
       "aliases": [],
@@ -1542,14 +1403,7 @@
       "pluginType": "core",
       "strict": true,
       "isESM": true,
-      "relativePath": [
-        "dist",
-        "esm",
-        "src",
-        "commands",
-        "contract",
-        "set.js"
-      ]
+      "relativePath": ["dist", "esm", "src", "commands", "contract", "set.js"]
     }
   },
   "version": "1.12.13"
