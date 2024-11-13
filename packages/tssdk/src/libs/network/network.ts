@@ -205,6 +205,7 @@ export class NetworkApi {
 
   public bootstrap = async () => {
     if (
+      // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
       typeof localStorage !== 'undefined' &&
       localStorage !== null &&
       localStorage?.getItem('nodesList')

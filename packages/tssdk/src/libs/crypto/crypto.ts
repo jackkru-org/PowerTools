@@ -19,6 +19,7 @@ import { ParseWholePemException } from './exceptions/parse-whole-pem.exception.j
 import { FileIsCorruptException } from './exceptions/file-is-corrupt.exception.js'
 
 const ECPair: ECPairAPI = ecPairFactory(ecc)
+// eslint-disable-next-line new-cap
 const bip32 = bip32Factory.BIP32Factory(ecc)
 
 export const DERIVATION_PATH_BASE = 'm/44'
