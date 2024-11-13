@@ -1,6 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 import { getAddress } from 'viem'
 import { AddressScopeEnum } from '../../typings.js'
 import { BadAddressException } from './exceptions/bad-address.exception.js'
