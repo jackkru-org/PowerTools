@@ -1,7 +1,7 @@
 import { ux } from '@oclif/core'
 import crypto from 'crypto'
 import { readFileSync } from 'node:fs'
-import { prompt } from 'enquirer'
+import enquirer from 'enquirer'
 
 export enum TaskState {
   Cancelled,
@@ -120,7 +120,7 @@ export async function importContainerKey(containerKeyFilePath: string, container
     return privateKeyPem
   } catch (error) {
     ux.action.stop()
-    const { password }: { password: string } = await prompt({
+    const { password }: { password: string } = await enquirer.prompt({
       message: 'Please, enter your account keyFile password',
       name: 'password',
       type: 'password'

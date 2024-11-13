@@ -1,7 +1,7 @@
 import { color } from '@oclif/color'
 import { Flags, ux } from '@oclif/core'
 import { CryptoApi, NetworkApi, NetworkEnum, WalletApi } from '@jackkru-org/tssdk'
-import { prompt } from 'enquirer'
+import enquirer from 'enquirer'
 import { colorize } from 'json-colorizer'
 import { writeFileSync } from 'node:fs'
 import * as path from 'node:path'
@@ -148,7 +148,7 @@ Register a new account on a specified chain without saving the data to a file.`
       type: 'select'
     }
 
-    const { chain }: { chain: number } = await prompt([question])
+    const { chain }: { chain: number } = await enquirer.prompt([question])
     return chain
   }
 
@@ -160,7 +160,7 @@ Register a new account on a specified chain without saving the data to a file.`
       type: 'select'
     }
 
-    const { network }: { network: NetworkEnum } = await prompt([question])
+    const { network }: { network: NetworkEnum } = await enquirer.prompt([question])
     return network
   }
 

@@ -1,4 +1,4 @@
-import { prompt } from 'enquirer'
+import enquirer from 'enquirer'
 import { existsSync, promises as fsPromises } from 'node:fs'
 import { resolve } from 'node:path'
 
@@ -51,32 +51,32 @@ export const setConfigFile = async (config: CliConfig, configPath: string): Prom
 }
 
 export const setConfig = async (configPath: string): Promise<CliConfig> => {
-  const { source }: { source: string } = await prompt({
+  const { source }: { source: string } = await enquirer.prompt({
     initial: './dist',
     message: 'Please, enter the source path of your project, e.g., "./dist")',
     name: 'source',
     type: 'input'
   })
 
-  await prompt({
+  await enquirer.prompt({
     message: `Source path = "${resolve(source)}". Continue? (yes/no)`,
     name: 'confirmSource',
     type: 'confirm'
   })
 
-  const { projectId }: { projectId: string } = await prompt({
+  const { projectId }: { projectId: string } = await enquirer.prompt({
     message: 'Please, enter your project id (must be unique in the list of your projects)',
     name: 'projectId',
     type: 'input'
   })
 
-  const { address }: { address: string } = await prompt({
+  const { address }: { address: string } = await enquirer.prompt({
     message: 'Please, enter your account address, e.g., "AA030000174483048139"',
     name: 'address',
     type: 'input'
   })
 
-  const { keyFilePath }: { keyFilePath: string } = await prompt({
+  const { keyFilePath }: { keyFilePath: string } = await enquirer.prompt({
     message: 'Please, enter the source path of your keyFile, e.g.)',
     name: 'keyFilePath',
     type: 'input'

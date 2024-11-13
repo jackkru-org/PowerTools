@@ -204,7 +204,12 @@ export class NetworkApi {
   }
 
   public bootstrap = async () => {
-    if (localStorage?.getItem('nodesList')) {
+    if (
+      // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
+      typeof localStorage !== 'undefined' &&
+      localStorage !== null &&
+      localStorage?.getItem('nodesList')
+    ) {
       const stringifiedNodesList = localStorage.getItem('nodesList')
       const chainIdString = localStorage.getItem('chainId')
       const chainId = chainIdString ? Number(chainIdString) : this.currentChain

@@ -1,7 +1,7 @@
 import { Flags } from '@oclif/core'
 import jsonwebtoken from 'jsonwebtoken'
 import { promises } from 'node:fs'
-import { prompt } from 'enquirer'
+import enquirer from 'enquirer'
 import { EvmContract } from '@jackkru-org/tssdk'
 import axios from 'axios'
 import { Listr, color } from 'listr2'
@@ -186,7 +186,7 @@ export default class ContainerUpload extends BaseCommand {
         })
       )
 
-      const { providerId }: { providerId: number } = await prompt({
+      const { providerId }: { providerId: number } = await enquirer.prompt({
         choices: providers.map(({ name, tokenId }) => ({
           message: name,
           name: tokenId

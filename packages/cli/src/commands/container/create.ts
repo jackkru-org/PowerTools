@@ -3,8 +3,8 @@ import crypto from 'crypto'
 import { readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import { AddressApi, EvmContract } from '@jackkru-org/tssdk'
-import color from '@oclif/color'
-import { prompt } from 'enquirer'
+import { color } from '@oclif/color'
+import enquirer from 'enquirer'
 import { isAddress } from 'viem/utils'
 import { initializeNetworkApi, loadWallet } from '../../helpers/network.helper.js'
 import cliConfig from '../../config/cli.js'
@@ -156,7 +156,7 @@ export default class ContainerCreate extends BaseCommand {
         .export({ type: 'spki', format: 'pem' })
       return { privateKeyPem, publicKeyPem }
     } catch (error) {
-      const { password }: { password: string } = await prompt({
+      const { password }: { password: string } = await enquirer.prompt({
         message: 'Please, enter your account keyFile password',
         name: 'password',
         type: 'password'

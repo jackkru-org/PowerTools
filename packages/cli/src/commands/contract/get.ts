@@ -2,7 +2,7 @@ import { Flags, ux } from '@oclif/core'
 import { EvmContract } from '@jackkru-org/tssdk'
 import { readFileSync } from 'node:fs'
 
-import color from '@oclif/color'
+import { color } from '@oclif/color'
 import { initializeNetworkApi } from '../../helpers/network.helper.js'
 import { BaseCommand } from '../../baseCommand.js'
 import { ParamsParser } from '../../helpers/params-parser.helper.js'

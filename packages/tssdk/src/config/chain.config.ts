@@ -1,4 +1,4 @@
-import { type ChainConfig } from '../typings'
+import type { ChainConfig } from '../typings.js'
 
 export const config: ChainConfig = {
   requestTotalAttempts: 5,
