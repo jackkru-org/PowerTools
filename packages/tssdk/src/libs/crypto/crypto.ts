@@ -4,7 +4,7 @@ import createHash, { type algorithm } from 'create-hash'
 import { promises } from 'fs'
 import Crypto, { type BinaryLike, type CipherKey } from 'crypto'
 import { ECPairFactory as ecPairFactory, type ECPairAPI } from 'ecpair'
-import bip32Factory from 'bip32'
+import * as bip32Factory from 'bip32'
 
 import ecc from '@bitcoinerlab/secp256k1'
 import { AddressApi } from '../address/address.js'
@@ -19,7 +19,7 @@ import { ParseWholePemException } from './exceptions/parse-whole-pem.exception.j
 import { FileIsCorruptException } from './exceptions/file-is-corrupt.exception.js'
 
 const ECPair: ECPairAPI = ecPairFactory(ecc)
-const bip32 = bip32Factory(ecc)
+const bip32 = bip32Factory.BIP32Factory(ecc)
 
 export const DERIVATION_PATH_BASE = 'm/44'
 export const COIN = '31337'

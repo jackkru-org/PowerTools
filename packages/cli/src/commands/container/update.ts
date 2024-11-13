@@ -1,7 +1,7 @@
 import { Flags, ux } from '@oclif/core'
 import crypto from 'crypto'
 import { EvmContract } from '@jackkru-org/tssdk'
-import color from '@oclif/color'
+import { color } from '@oclif/color'
 import { initializeNetworkApi, loadWallet } from '../../helpers/network.helper.js'
 import cliConfig from '../../config/cli.js'
 import abis from '../../abis/index.js'

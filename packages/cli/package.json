@@ -3,7 +3,7 @@
   "version": "1.12.13",
   "description": "the power cli",
   "author": "thepower",
-  "main": "../dist/esm/src/index.js",
+  "main": "./dist/esm/src/index.js",
   "types": "./dist/types/src/index.d.ts",
   "files": [
     "/bin",
@@ -13,7 +13,7 @@
   ],
   "type": "module",
   "bin": {
-    "tpe": "./bin/run"
+    "tpe": "./bin/run.js"
   },
   "publishConfig": {
     "access": "public"
@@ -43,7 +43,7 @@
   },
   "bugs": "https://github.com/thepower/PowerTools/issues",
   "dependencies": {
-    "@jackkru-org/tssdk": "workspace:*",
+    "@jackkru-org/tssdk": "*",
     "@oclif/color": "^1.0.13",
     "@oclif/core": "^4",
     "@oclif/plugin-autocomplete": "^3.1.4",
@@ -79,7 +79,7 @@
   "oclif": {
     "bin": "tpe",
     "dirname": "tpe",
-    "commands": "./dist/commands",
+    "commands": "./dist/esm/src/commands",
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-plugins",

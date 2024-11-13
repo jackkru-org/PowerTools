@@ -2,7 +2,7 @@ import { Flags, ux } from '@oclif/core'
 import { TransactionsApi } from '@jackkru-org/tssdk'
 import { readFileSync } from 'node:fs'
 
-import color from '@oclif/color'
+import { color } from '@oclif/color'
 import { colorize } from 'json-colorizer'
 import { type Abi } from 'viem'
 import { initializeNetworkApi, loadWallet } from '../../helpers/network.helper.js'

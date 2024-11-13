@@ -1,5 +1,5 @@
 import { Flags, ux } from '@oclif/core'
-import color from '@oclif/color'
+import { color } from '@oclif/color'
 import { AddressApi, EvmContract } from '@jackkru-org/tssdk'
 import { isAddress } from 'viem/utils'
 import cliConfig from '../../config/cli.js'

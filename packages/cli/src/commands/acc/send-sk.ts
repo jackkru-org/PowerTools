@@ -2,7 +2,7 @@ import { Flags, ux } from '@oclif/core'
 import { WalletApi } from '@jackkru-org/tssdk'
 import { colorize } from 'json-colorizer'
 
-import color from '@oclif/color'
+import { color } from '@oclif/color'
 import { parseUnits } from 'viem/utils'
 import { initializeNetworkApi, loadWallet } from '../../helpers/network.helper.js'
 import { BaseCommand } from '../../baseCommand.js'

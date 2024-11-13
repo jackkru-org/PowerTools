@@ -204,7 +204,11 @@ export class NetworkApi {
   }
 
   public bootstrap = async () => {
-    if (localStorage?.getItem('nodesList')) {
+    if (
+      typeof localStorage !== 'undefined' &&
+      localStorage !== null &&
+      localStorage?.getItem('nodesList')
+    ) {
       const stringifiedNodesList = localStorage.getItem('nodesList')
       const chainIdString = localStorage.getItem('chainId')
       const chainId = chainIdString ? Number(chainIdString) : this.currentChain

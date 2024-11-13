@@ -1,0 +1,1556 @@
+{
+  "commands": {
+    "acc:get-balance": {
+      "aliases": [],
+      "args": {},
+      "description": "Get the balance of a wallet address",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> --address AA100000001677748249",
+        "<%= config.bin %> <%= command.id %> -a AA100000001677748249",
+        "<%= config.bin %> <%= command.id %> --address AA100000001677748249 --bootstrapChain 1025",
+        "<%= config.bin %> <%= command.id %> --keyFilePath ./path/to/keyfile.pem --password mypassword"
+      ],
+      "flags": {
+        "address": {
+          "aliases": [
+            "adr"
+          ],
+          "char": "a",
+          "description": "Wallet address",
+          "exclusive": [
+            "keyFilePath"
+          ],
+          "name": "address",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "chain": {
+          "char": "c",
+          "description": "Chain ID",
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "bootstrapChain": {
+          "char": "b",
+          "description": "Bootstrap chain ID",
+          "name": "bootstrapChain",
+          "default": 1025,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "keyFilePath": {
+          "char": "k",
+          "description": "Path to the key file",
+          "exclusive": [
+            "address"
+          ],
+          "name": "keyFilePath",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the key file (env: KEY_FILE_PASSWORD)",
+          "env": "KEY_FILE_PASSWORD",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "isEth": {
+          "char": "e",
+          "description": "Use an ethereum address",
+          "name": "isEth",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "acc:get-balance",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "acc",
+        "get-balance.js"
+      ]
+    },
+    "acc:register": {
+      "aliases": [],
+      "args": {},
+      "description": "Register a new account on the specified blockchain or network",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> --chain 1 --password mypassword --filePath /path/to/save\nRegister a new account on a specified chain with a password and save the data to a specified file path.",
+        "<%= config.bin %> <%= command.id %> --network devnet --referrer myreferrer\nRegister a new account on the devnet network with a specified referrer.",
+        "<%= config.bin %> <%= command.id %>\nInteractively register a new account by selecting the network and chain.",
+        "<%= config.bin %> <%= command.id %> --chain 1 --no-save\nRegister a new account on a specified chain without saving the data to a file."
+      ],
+      "flags": {
+        "chain": {
+          "char": "c",
+          "description": "Specify the chain",
+          "exclusive": [
+            "network"
+          ],
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "filePath": {
+          "char": "f",
+          "description": "Path to save the exported file",
+          "exclusive": [
+            "noSave"
+          ],
+          "name": "filePath",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "hint": {
+          "char": "h",
+          "description": "Hint for the account password",
+          "name": "hint",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "network": {
+          "char": "n",
+          "description": "Specify the network",
+          "exclusive": [
+            "chain"
+          ],
+          "name": "network",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "options": [
+            "devnet",
+            "testnet",
+            "appchain"
+          ],
+          "type": "option"
+        },
+        "noSave": {
+          "char": "x",
+          "description": "Do not save the exported file",
+          "exclusive": [
+            "filePath"
+          ],
+          "name": "noSave",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the account",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "referrer": {
+          "char": "r",
+          "description": "Referrer for the account",
+          "name": "referrer",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "seed": {
+          "char": "s",
+          "description": "Seed for the account",
+          "name": "seed",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "isEth": {
+          "char": "e",
+          "description": "Register an Ethereum account",
+          "name": "isEth",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "hdPath": {
+          "char": "d",
+          "description": "HD path for the account",
+          "name": "hdPath",
+          "default": "m/44'/60'/0'",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "acc:register",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "acc",
+        "register.js"
+      ]
+    },
+    "acc:send-sk": {
+      "aliases": [],
+      "args": {},
+      "description": "Send SK tokens to a specified address",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> --amount 100 --to AA100000001677748249 --keyFilePath ./path/to/keyfile.pem --password mypassword",
+        "<%= config.bin %> <%= command.id %> -a 100 -t AA100000001677748249 -k ./path/to/keyfile.pem -p mypassword",
+        "<%= config.bin %> <%= command.id %> --amount 100 --to AA100000001677748249 --keyFilePath ./path/to/keyfile.pem"
+      ],
+      "flags": {
+        "amount": {
+          "char": "a",
+          "description": "Amount to send",
+          "name": "amount",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "bootstrapChain": {
+          "char": "b",
+          "description": "Default chain ID",
+          "name": "bootstrapChain",
+          "default": 1025,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "keyFilePath": {
+          "char": "k",
+          "description": "Path to the key file",
+          "name": "keyFilePath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "message": {
+          "char": "m",
+          "description": "Message to include",
+          "name": "message",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the key file (env: KEY_FILE_PASSWORD)",
+          "env": "KEY_FILE_PASSWORD",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "to": {
+          "char": "t",
+          "description": "Recipient address",
+          "name": "to",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token": {
+          "char": "e",
+          "description": "Token to send",
+          "name": "token",
+          "default": "SK",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "decimals": {
+          "char": "d",
+          "description": "Decimals of the token",
+          "name": "decimals",
+          "default": 9,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "gasToken": {
+          "char": "g",
+          "description": "Token used to pay for gas",
+          "name": "gasToken",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "gasValue": {
+          "char": "v",
+          "description": "Gas value for deployment",
+          "name": "gasValue",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "chain": {
+          "char": "c",
+          "description": "Chain ID",
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "isEth": {
+          "char": "h",
+          "description": "Use an ethereum address",
+          "name": "isEth",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "acc:send-sk",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "acc",
+        "send-sk.js"
+      ]
+    },
+    "container:actions": {
+      "aliases": [],
+      "args": {},
+      "description": "Perform various container actions",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> -m \"container_start\" -p 1 -f ./path/to/keyfile.pem -s mypassword",
+        "<%= config.bin %> <%= command.id %> -m \"container_stop\" -p 1 -f ./path/to/keyfile.pem -s mypassword",
+        "<%= config.bin %> <%= command.id %> -m \"container_destroy\" -p 1 -f ./path/to/keyfile.pem -s mypassword",
+        "<%= config.bin %> <%= command.id %> -m \"container_handover\" -p 1 -f ./path/to/keyfile.pem -s mypassword",
+        "<%= config.bin %> <%= command.id %> -m \"container_getPort\" -p \"1 web 5000\" -f ./path/to/keyfile.pem -s mypassword",
+        "<%= config.bin %> <%= command.id %> -m \"container_getLogs\" -p 1 -f ./path/to/keyfile.pem -s mypassword"
+      ],
+      "flags": {
+        "method": {
+          "char": "m",
+          "description": "Method to call on the container",
+          "name": "method",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "params": {
+          "char": "p",
+          "description": "Parameters for the method",
+          "name": "params",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "containerKeyFilePath": {
+          "char": "f",
+          "description": "Path to the container key file",
+          "name": "containerKeyFilePath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "containerPassword": {
+          "char": "s",
+          "description": "Password for the container key file (env: CONTAINER_KEY_FILE_PASSWORD)",
+          "env": "CONTAINER_KEY_FILE_PASSWORD",
+          "name": "containerPassword",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "container:actions",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "container",
+        "actions.js"
+      ]
+    },
+    "container:create": {
+      "aliases": [],
+      "args": {},
+      "description": "Create a new container with a given name and key pair",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> -k ./key.pem -p mypassword -n \"NewContainer\" -s containerpassword",
+        "<%= config.bin %> <%= command.id %> -k ./key.pem --password mypassword --containerName \"NewContainer\" --containerPassword containerpassword"
+      ],
+      "flags": {
+        "keyFilePath": {
+          "char": "k",
+          "description": "Path to the key file",
+          "name": "keyFilePath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the key file (env: KEY_FILE_PASSWORD)",
+          "env": "KEY_FILE_PASSWORD",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "containerName": {
+          "char": "n",
+          "description": "Name of the container",
+          "name": "containerName",
+          "required": true,
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "containerKeyFilePath": {
+          "char": "f",
+          "description": "Path to the container key file",
+          "name": "containerKeyFilePath",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "containerPassword": {
+          "char": "s",
+          "description": "Password for the container key file (env: CONTAINER_KEY_FILE_PASSWORD)",
+          "env": "CONTAINER_KEY_FILE_PASSWORD",
+          "name": "containerPassword",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ordersScAddress": {
+          "char": "a",
+          "description": "Orders smart contract address",
+          "name": "ordersScAddress",
+          "default": "AA100000001677749450",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "sponsorAddress": {
+          "char": "r",
+          "description": "Address of the sponsor",
+          "name": "sponsorAddress",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "chain": {
+          "char": "c",
+          "description": "Chain ID",
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "isEth": {
+          "char": "e",
+          "description": "Use an ethereum address",
+          "name": "isEth",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "container:create",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "container",
+        "create.js"
+      ]
+    },
+    "container:list": {
+      "aliases": [],
+      "args": {},
+      "description": "List containers owned by a user",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> -k ./key.pem -p mypassword",
+        "<%= config.bin %> <%= command.id %> -k ./key.pem --password mypassword"
+      ],
+      "flags": {
+        "keyFilePath": {
+          "char": "k",
+          "description": "Path to the key file",
+          "name": "keyFilePath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the key file (env: KEY_FILE_PASSWORD)",
+          "env": "KEY_FILE_PASSWORD",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ordersScAddress": {
+          "char": "a",
+          "description": "Orders smart contract address",
+          "name": "ordersScAddress",
+          "default": "AA100000001677749450",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "chain": {
+          "char": "c",
+          "description": "Chain ID",
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "isEth": {
+          "char": "e",
+          "description": "Use an ethereum address",
+          "name": "isEth",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "container:list",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "container",
+        "list.js"
+      ]
+    },
+    "container:update": {
+      "aliases": [],
+      "args": {},
+      "description": "Update container details",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> -k ./key.pem -p mypassword -i 123 -n \"New Container Name\" -f ./containerKey.pem -s containerpassword",
+        "<%= config.bin %> <%= command.id %> -k ./key.pem --password mypassword --containerId 123 \n    --containerName \"New Container Name\" --containerKeyFilePath ./containerKey.pem --containerPassword containerpassword"
+      ],
+      "flags": {
+        "keyFilePath": {
+          "char": "k",
+          "description": "Path to the key file",
+          "name": "keyFilePath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the key file (env: KEY_FILE_PASSWORD)",
+          "env": "KEY_FILE_PASSWORD",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "containerId": {
+          "char": "i",
+          "description": "Id of the container",
+          "name": "containerId",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "containerName": {
+          "char": "n",
+          "description": "Name of the container",
+          "name": "containerName",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "containerKeyFilePath": {
+          "char": "f",
+          "description": "Path to the container key file",
+          "name": "containerKeyFilePath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "containerPassword": {
+          "char": "s",
+          "description": "Password for the container key file (env: CONTAINER_KEY_FILE_PASSWORD)",
+          "env": "CONTAINER_KEY_FILE_PASSWORD",
+          "name": "containerPassword",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ordersScAddress": {
+          "char": "a",
+          "description": "Orders smart contract address",
+          "name": "ordersScAddress",
+          "default": "AA100000001677749450",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "sponsorAddress": {
+          "char": "r",
+          "description": "Address of the sponsor",
+          "name": "sponsorAddress",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "isEth": {
+          "char": "e",
+          "description": "Use an ethereum address",
+          "name": "isEth",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "container:update",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "container",
+        "update.js"
+      ]
+    },
+    "container:upload": {
+      "aliases": [],
+      "args": {},
+      "description": "Upload files to a container",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> --containerId 123 --containerKeyFilePath ./key.pem --containerPassword mypassword --filesPath ./files",
+        "<%= config.bin %> <%= command.id %> -i 123 -f ./key.pem -s mypassword -p ./files"
+      ],
+      "flags": {
+        "keyFilePath": {
+          "char": "k",
+          "description": "Path to the key file",
+          "name": "keyFilePath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the key file (env: KEY_FILE_PASSWORD)",
+          "env": "KEY_FILE_PASSWORD",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "containerId": {
+          "char": "i",
+          "description": "Container ID",
+          "name": "containerId",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "containerKeyFilePath": {
+          "char": "f",
+          "description": "Path to the container key file",
+          "name": "containerKeyFilePath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "containerPassword": {
+          "char": "s",
+          "description": "Password for the container key file (env: CONTAINER_KEY_FILE_PASSWORD)",
+          "env": "CONTAINER_KEY_FILE_PASSWORD",
+          "name": "containerPassword",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "filesPath": {
+          "char": "t",
+          "description": "Path to the files",
+          "name": "filesPath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "chooseProvider": {
+          "char": "c",
+          "description": "Choose provider",
+          "name": "chooseProvider",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "ordersScAddress": {
+          "char": "a",
+          "description": "Orders smart contract address",
+          "name": "ordersScAddress",
+          "default": "AA100000001677749450",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "providerScAddress": {
+          "char": "b",
+          "description": "Provider smart contract address",
+          "name": "providerScAddress",
+          "default": "AA100000001677749552",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "chain": {
+          "char": "n",
+          "description": "Chain ID",
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "isEth": {
+          "char": "e",
+          "description": "Use an ethereum address",
+          "name": "isEth",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "container:upload",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "container",
+        "upload.js"
+      ]
+    },
+    "provider:create": {
+      "aliases": [],
+      "args": {},
+      "description": "Create a new provider with a given name and key pair",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> -k ./key.pem -p mypassword -n \"NewProvider\" -s containerpassword",
+        "<%= config.bin %> <%= command.id %> -k ./key.pem --password mypassword --containerName \"NewProvider\" --containerPassword containerpassword"
+      ],
+      "flags": {
+        "keyFilePath": {
+          "char": "k",
+          "description": "Path to the key file",
+          "name": "keyFilePath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the key file (env: KEY_FILE_PASSWORD)",
+          "env": "KEY_FILE_PASSWORD",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "providerName": {
+          "char": "n",
+          "description": "Name of the provider",
+          "name": "providerName",
+          "required": true,
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "providersScAddress": {
+          "char": "a",
+          "description": "Provider smart contract address",
+          "name": "providersScAddress",
+          "default": "AA100000001677749552",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "sponsorAddress": {
+          "char": "r",
+          "description": "Address of the sponsor",
+          "name": "sponsorAddress",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "chain": {
+          "char": "c",
+          "description": "Chain ID",
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "isEth": {
+          "char": "e",
+          "description": "Use an ethereum address",
+          "name": "isEth",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "provider:create",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "provider",
+        "create.js"
+      ]
+    },
+    "provider:list": {
+      "aliases": [],
+      "args": {},
+      "description": "List all providers or filter by key file or address",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> -k ./key.pem -p mypassword",
+        "<%= config.bin %> <%= command.id %> --address 0x123...abc"
+      ],
+      "flags": {
+        "keyFilePath": {
+          "char": "k",
+          "description": "Path to the key file (used for filtering by owner)",
+          "exclusive": [
+            "address"
+          ],
+          "name": "keyFilePath",
+          "required": false,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the key file (env: KEY_FILE_PASSWORD)",
+          "env": "KEY_FILE_PASSWORD",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "address": {
+          "char": "r",
+          "description": "Filter by address",
+          "exclusive": [
+            "keyFilePath",
+            "password"
+          ],
+          "name": "address",
+          "required": false,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "providersScAddress": {
+          "char": "a",
+          "description": "Providers smart contract address",
+          "name": "providersScAddress",
+          "default": "AA100000001677749552",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ordersScAddress": {
+          "char": "o",
+          "description": "Orders smart contract address",
+          "name": "ordersScAddress",
+          "default": "AA100000001677749450",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "chain": {
+          "char": "c",
+          "description": "Chain ID",
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "isEth": {
+          "char": "e",
+          "description": "Use an ethereum address",
+          "name": "isEth",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "provider:list",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "provider",
+        "list.js"
+      ]
+    },
+    "provider:set-url": {
+      "aliases": [],
+      "args": {},
+      "description": "Set or update the URL for a specific provider using the provider ID. Requires a key file for authentication.",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> -k ./key.pem -p mypassword -i 123 -u \"https://provider.example.com\"",
+        "<%= config.bin %> <%= command.id %> --keyFilePath ./key.pem --password mypassword --providerId 123 --providerUrl \"https://provider.example.com\"",
+        "<%= config.bin %> <%= command.id %> -k ./key.pem -i 123 -u \"https://provider.example.com\" --sponsorAddress 0xSponsorAddress"
+      ],
+      "flags": {
+        "keyFilePath": {
+          "char": "k",
+          "description": "Path to the key file",
+          "name": "keyFilePath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the key file (env: KEY_FILE_PASSWORD)",
+          "env": "KEY_FILE_PASSWORD",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "providerId": {
+          "char": "i",
+          "description": "Id of the provider",
+          "name": "providerId",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "providerUrl": {
+          "char": "u",
+          "description": "Url of the provider",
+          "name": "providerUrl",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ordersScAddress": {
+          "char": "a",
+          "description": "Orders smart contract address",
+          "name": "ordersScAddress",
+          "default": "AA100000001677749450",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "sponsorAddress": {
+          "char": "r",
+          "description": "Address of the sponsor",
+          "name": "sponsorAddress",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "chain": {
+          "char": "c",
+          "description": "Chain ID",
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "isEth": {
+          "char": "e",
+          "description": "Use an ethereum address",
+          "name": "isEth",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "provider:set-url",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "provider",
+        "set-url.js"
+      ]
+    },
+    "storage:tasklist": {
+      "aliases": [],
+      "args": {},
+      "description": "Shows the list of all tasks for the current account",
+      "examples": [
+        "<%= config.bin %> <%= command.id %>",
+        "<%= config.bin %> <%= command.id %> ./tp-cli.json"
+      ],
+      "flags": {
+        "bootstrapChain": {
+          "char": "b",
+          "description": "Default chain ID",
+          "name": "bootstrapChain",
+          "default": 1025,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "configPath": {
+          "char": "c",
+          "description": "Config to read",
+          "name": "configPath",
+          "default": "./tp-cli.json",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "storageScAddress": {
+          "char": "a",
+          "description": "Storage smart contract address",
+          "name": "storageScAddress",
+          "default": "AA100000001677723663",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "chain": {
+          "char": "n",
+          "description": "Chain ID",
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "storage:tasklist",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "enableJsonFlag": false,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "storage",
+        "tasklist.js"
+      ]
+    },
+    "storage:upload": {
+      "aliases": [],
+      "args": {},
+      "description": "Upload application files to the storage",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> ./tp-cli.json"
+      ],
+      "flags": {
+        "bootstrapChain": {
+          "char": "b",
+          "description": "Default chain ID for bootstrap",
+          "name": "bootstrapChain",
+          "default": 1025,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "configPath": {
+          "char": "c",
+          "description": "Config to read",
+          "name": "configPath",
+          "default": "./tp-cli.json",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "storageScAddress": {
+          "char": "a",
+          "description": "Storage smart contract address",
+          "name": "storageScAddress",
+          "default": "AA100000001677723663",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the key file (env: KEY_FILE_PASSWORD)",
+          "env": "KEY_FILE_PASSWORD",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "sponsorAddress": {
+          "char": "s",
+          "description": "Address of the sponsor",
+          "name": "sponsorAddress",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "chain": {
+          "char": "n",
+          "description": "Chain ID",
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "isEth": {
+          "char": "e",
+          "description": "Use an ethereum address",
+          "name": "isEth",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "storage:upload",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "enableJsonFlag": false,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "storage",
+        "upload.js"
+      ]
+    },
+    "contract:deploy": {
+      "aliases": [],
+      "args": {},
+      "description": "Deploy a smart contract to the blockchain",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> --abiPath ./path/to/abi.json --binPath ./path/to/bin --keyFilePath ./path/to/keyfile.pem --password mypassword",
+        "<%= config.bin %> <%= command.id %> -a ./path/to/abi.json -b ./path/to/bin -k ./path/to/keyfile.pem -p mypassword --gasToken SK --gasValue 2000000000000000000",
+        "<%= config.bin %> <%= command.id %> --abiPath ./path/to/abi.json --binPath ./path/to/bin --keyFilePath ./path/to/keyfile.pem --initParams \"param1 param2\""
+      ],
+      "flags": {
+        "jsonPath": {
+          "char": "j",
+          "description": "Path to the JSON file",
+          "exclusive": [
+            "abiPath",
+            "binPath"
+          ],
+          "name": "jsonPath",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "abiPath": {
+          "char": "a",
+          "description": "Path to the ABI file",
+          "exclusive": [
+            "jsonPath"
+          ],
+          "name": "abiPath",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "binPath": {
+          "char": "b",
+          "description": "Path to the binary file",
+          "exclusive": [
+            "jsonPath"
+          ],
+          "name": "binPath",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "gasToken": {
+          "char": "t",
+          "description": "Token used to pay for gas",
+          "name": "gasToken",
+          "default": "SK",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "gasValue": {
+          "char": "v",
+          "description": "Gas value for deployment",
+          "name": "gasValue",
+          "default": "2000000000000000000",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "initParams": {
+          "char": "i",
+          "description": "Initialization parameters",
+          "name": "initParams",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "keyFilePath": {
+          "char": "k",
+          "description": "Path to the key file",
+          "name": "keyFilePath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the key file (env: KEY_FILE_PASSWORD)",
+          "env": "KEY_FILE_PASSWORD",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "inPlace": {
+          "char": "l",
+          "description": "",
+          "name": "inPlace",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "chain": {
+          "char": "c",
+          "description": "Chain ID",
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "contract:deploy",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "contract",
+        "deploy.js"
+      ]
+    },
+    "contract:get": {
+      "aliases": [],
+      "args": {},
+      "description": "Call a method on a deployed smart contract",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> --abiPath ./path/to/abi.json --address AA100000001677748249 --method getBalance --params \"0x456 1 2 [1,2] {a: 1, b: 2} 1n\"",
+        "<%= config.bin %> <%= command.id %> -a ./path/to/abi.json -d AA100000001677748249 -m getBalance -p \"0x456 1 2 [1,2] {a: 1, b: 2} 1n\"",
+        "<%= config.bin %> <%= command.id %> --abiPath ./path/to/abi.json --address AA100000001677748249 --method getInfo"
+      ],
+      "flags": {
+        "abiPath": {
+          "char": "a",
+          "description": "Path to the ABI file",
+          "name": "abiPath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "address": {
+          "aliases": [
+            "adr"
+          ],
+          "char": "d",
+          "description": "Smart contract address",
+          "name": "address",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "method": {
+          "char": "m",
+          "description": "Method name to call",
+          "name": "method",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "params": {
+          "char": "p",
+          "description": "Parameters for the method",
+          "name": "params",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "contract:get",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "contract",
+        "get.js"
+      ]
+    },
+    "contract:set": {
+      "aliases": [],
+      "args": {},
+      "description": "Execute a method on a specified smart contract",
+      "examples": [
+        "<%= config.bin %> <%= command.id %> --abiPath ./path/to/abi.json \n    --address AA100000001677748249 --keyFilePath ./path/to/keyfile.pem --method set --params value1 --password mypassword",
+        "<%= config.bin %> <%= command.id %> -a ./path/to/abi.json -d AA100000001677748249 -k ./path/to/keyfile.pem -m set -r \"value1 value2\" -p mypassword",
+        "<%= config.bin %> <%= command.id %> --abiPath ./path/to/abi.json \n    --address AA100000001677748249 --keyFilePath ./path/to/keyfile.pem --method setData --params \"0x456 1 2 [1,2] {a: 1, b: 2} 1n\""
+      ],
+      "flags": {
+        "abiPath": {
+          "char": "a",
+          "description": "Path to the ABI file",
+          "name": "abiPath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "address": {
+          "char": "d",
+          "description": "Smart contract address",
+          "name": "address",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "keyFilePath": {
+          "char": "k",
+          "description": "Path to the key file",
+          "name": "keyFilePath",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "method": {
+          "char": "m",
+          "description": "Method name to call",
+          "name": "method",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "params": {
+          "char": "r",
+          "description": "Parameters for the method",
+          "name": "params",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "amount": {
+          "char": "n",
+          "description": "Amount of tokens to send",
+          "name": "amount",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "password": {
+          "char": "p",
+          "description": "Password for the key file (env: KEY_FILE_PASSWORD)",
+          "env": "KEY_FILE_PASSWORD",
+          "name": "password",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "sponsorAddress": {
+          "char": "s",
+          "description": "Address of the sponsor",
+          "name": "sponsorAddress",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "chain": {
+          "char": "c",
+          "description": "Chain ID",
+          "name": "chain",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "isEth": {
+          "char": "e",
+          "description": "Use an ethereum address",
+          "name": "isEth",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "contract:set",
+      "pluginAlias": "@jackkru-org/cli",
+      "pluginName": "@jackkru-org/cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": true,
+      "relativePath": [
+        "dist",
+        "esm",
+        "src",
+        "commands",
+        "contract",
+        "set.js"
+      ]
+    }
+  },
+  "version": "1.12.13"
+}

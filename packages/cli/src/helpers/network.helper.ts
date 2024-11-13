@@ -1,6 +1,6 @@
 import { NetworkApi, WalletApi } from '@jackkru-org/tssdk'
 import { readFileSync } from 'node:fs'
-import { prompt } from 'enquirer'
+import enquirer from 'enquirer'
 import { ux } from '@oclif/core'
 
 export async function initializeNetworkApi({
@@ -40,7 +40,7 @@ export async function loadWallet(keyFilePath: string, password: string, isEth: b
     return WalletApi.parseExportData(importedData, password, isEth)
   } catch (error) {
     ux.action.stop()
-    const { requestedPassword }: { requestedPassword: string } = await prompt({
+    const { requestedPassword }: { requestedPassword: string } = await enquirer.prompt({
       message: 'Please, enter your account keyFile password',
       name: 'requestedPassword',
       type: 'password'
