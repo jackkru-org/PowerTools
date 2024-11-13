@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.3.0
+
+### Minor Changes
+
+- [#11](https://github.com/jackkru-org/PowerTools/pull/11) [`b706da6`](https://github.com/jackkru-org/PowerTools/commit/b706da6eef2dc582dab73ea491931b29a5454ef7) Thanks [@jackkru69](https://github.com/jackkru69)! - tsconfig noUncheckedIndexedAccess has been removed
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
