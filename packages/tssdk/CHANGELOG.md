@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.0.0
+
+### Major Changes
+
+- [#13](https://github.com/jackkru-org/PowerTools/pull/13) [`e8ec7e6`](https://github.com/jackkru-org/PowerTools/commit/e8ec7e6824cbae6989131fa22949fd53096150a0) Thanks [@jackkru69](https://github.com/jackkru69)! - test
+
+- [#13](https://github.com/jackkru-org/PowerTools/pull/13) [`e8ec7e6`](https://github.com/jackkru-org/PowerTools/commit/e8ec7e6824cbae6989131fa22949fd53096150a0) Thanks [@jackkru69](https://github.com/jackkru69)! - test
+
 ## 2.3.0
 
 ### Minor Changes
