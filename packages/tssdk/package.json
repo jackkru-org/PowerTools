@@ -1,6 +1,6 @@
 {
   "name": "@jackkru-org/tssdk",
-  "version": "2.2.10",
+  "version": "3.0.0",
   "main": "./dist/esm/src/index.js",
   "types": "./dist/types/src/index.d.ts",
   "description": "thepower tssdk",
