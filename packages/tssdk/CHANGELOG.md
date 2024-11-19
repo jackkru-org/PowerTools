@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.2.1
+
+### Patch Changes
+
+- [#18](https://github.com/jackkru-org/PowerTools/pull/18) [`35dfdca`](https://github.com/jackkru-org/PowerTools/commit/35dfdca8fc9d7b0205315dba1cfe279096a72bb5) Thanks [@jackkru69](https://github.com/jackkru69)! - tssdk crypto - removed loadKey
+
 ## 3.2.0
 
 ### Minor Changes
