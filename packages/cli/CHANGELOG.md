@@ -11,7 +11,6 @@
 - Updated dependencies []:
   - @jackkru-org/tssdk@3.1.0
 
-
 ## 2.0.0
 
 ### Major Changes
@@ -34,8 +33,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`e8ec7e6`](https://github.com/jackkru-org/PowerTools/commit/e8ec7e6824cbae6989131fa22949fd53096150a0), [`e8ec7e6`](https://github.com/jackkru-org/PowerTools/commit/e8ec7e6824cbae6989131fa22949fd53096150a0), [`b706da6`](https://github.com/jackkru-org/PowerTools/commit/b706da6eef2dc582dab73ea491931b29a5454ef7)]:
-  - @jackkru-org/tssdk@3.0.0
-=======
+  - # @jackkru-org/tssdk@3.0.0
 - Updated dependencies [[`b706da6`](https://github.com/jackkru-org/PowerTools/commit/b706da6eef2dc582dab73ea491931b29a5454ef7)]:
   - @jackkru-org/tssdk@2.3.0
 
