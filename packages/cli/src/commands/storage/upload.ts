@@ -1,7 +1,7 @@
 import { Command, Flags } from '@oclif/core'
 import { AddressApi, EvmContract } from '@jackkru-org/tssdk'
 import { Listr } from 'listr2'
-import { resolve } from 'node:path'
+import { resolve } from 'path'
 import { color } from '@oclif/color'
 
 import { isAddress } from 'viem/utils'

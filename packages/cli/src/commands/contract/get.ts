@@ -1,6 +1,6 @@
 import { Flags, ux } from '@oclif/core'
 import { EvmContract } from '@jackkru-org/tssdk'
-import { readFileSync } from 'node:fs'
+import { readFileSync } from 'fs'
 
 import { color } from '@oclif/color'
 import { initializeNetworkApi } from '../../helpers/network.helper.js'

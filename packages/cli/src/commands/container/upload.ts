@@ -1,6 +1,6 @@
 import { Flags } from '@oclif/core'
 import jsonwebtoken from 'jsonwebtoken'
-import { promises } from 'node:fs'
+import { promises } from 'fs'
 import enquirer from 'enquirer'
 import { EvmContract } from '@jackkru-org/tssdk'
 import axios from 'axios'

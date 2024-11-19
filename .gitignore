@@ -1,27 +1,48 @@
-# compiled output
+# Dependency directories
 node_modules
+.pnp
+.pnp.js
+.yarn
+
+# Next.js build output
+.next/
+out/
+
+# Production build output
+/build
+dist
 /packages/**/build
 /packages/**/dist
-/packages/**/.yarn
-/.yarn
 
-# Logs
-*.log
+# Testing files and coverage reports
+coverage
+.nyc_output
+test-results
+playwright-report/
+screenshots/
+
+# Debug and log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+*.log
 
-# OS
-.DS_Store
+# Local environment files
+.env*
+.env.local
+.env*.local
 
-# Tests
-/coverage
-/.nyc_output
-test-results
+# Vercel configuration
+.vercel
 
-# IDEs and editors
-/.idea
+# TypeScript files and output
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE and editor configurations
+.idea/
+.vscode/
 .project
 .classpath
 .c9/
@@ -29,20 +50,13 @@ test-results
 .settings/
 *.sublime-workspace
 
-# IDE - VSCode
-.vscode/*
+# OS files
+.DS_Store
 
-dist
-.env
-.idea
-.next
-out
-.env.local
+# TurboRepo cache
 .turbo
-playwright-report/
-screenshots/
 
-tsconfig.tsbuildinfo
+# Miscellaneous
+*.pem
 .cache-synpress
 .gitignore
-
