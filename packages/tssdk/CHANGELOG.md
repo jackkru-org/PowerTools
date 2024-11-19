@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.2.0
+
+### Minor Changes
+
+- [#16](https://github.com/jackkru-org/PowerTools/pull/16) [`7bca22c`](https://github.com/jackkru-org/PowerTools/commit/7bca22c63cf853e1091ac972d2a58ad5076727fb) Thanks [@jackkru69](https://github.com/jackkru69)! - fix
+
 ## 3.1.0
 
 ### Minor Changes
