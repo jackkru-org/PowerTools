@@ -1,19 +1,13 @@
 import * as wif from 'wif'
 import { mnemonicToSeed, generateMnemonic, validateMnemonic } from 'bip39'
 import createHash, { type algorithm } from 'create-hash'
-import { promises } from 'fs'
 import Crypto, { type BinaryLike, type CipherKey } from 'crypto'
 import { ECPairFactory as ecPairFactory, type ECPairAPI } from 'ecpair'
 import * as bip32Factory from 'bip32'
 
 import ecc from '@bitcoinerlab/secp256k1'
 import { AddressApi } from '../address/address.js'
-import {
-  type PKCS5PEMInfoType,
-  type Maybe,
-  type MaybeUndef,
-  type AccountKey
-} from '../../typings.js'
+import { type PKCS5PEMInfoType, type Maybe, type MaybeUndef } from '../../typings.js'
 import { UnknownCurveException } from './exceptions/unknown-curve.exception.js'
 import { ParseWholePemException } from './exceptions/parse-whole-pem.exception.js'
 import { FileIsCorruptException } from './exceptions/file-is-corrupt.exception.js'
@@ -267,14 +261,6 @@ export const CryptoApi = {
 
   generateKeyPairFromWIF(wif: string) {
     return ECPair.fromWIF(wif)
-  },
-
-  async loadKey(fileName: string, password: string): Promise<AccountKey> {
-    const keySignature = '-----BEGIN EC PRIVATE KEY-----'
-    const data: Buffer = await promises.readFile(fileName)
-    const file: string = data.toString()
-    const key = file.substr(file.indexOf(keySignature))
-    return CryptoApi.decryptWalletData(key, password)
   },
 
   generateKeyPairFromSeedPhraseAndAddress(seedPhrase: string, address: string) {
