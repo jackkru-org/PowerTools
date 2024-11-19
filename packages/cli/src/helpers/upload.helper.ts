@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { promises, statSync } from 'node:fs'
+import { promises, statSync } from 'fs'
 
 import { getFileHash } from './calc-hash.helper.js'
 

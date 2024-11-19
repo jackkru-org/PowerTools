@@ -1,5 +1,5 @@
-import { createHash } from 'node:crypto'
-import { promises } from 'node:fs'
+import { createHash } from 'crypto'
+import { promises } from 'fs'
 
 export const getFileHash = async (filePath: string) => {
   const fileBuffer = await promises.readFile(filePath)

@@ -1,5 +1,5 @@
 import { NetworkApi, WalletApi } from '@jackkru-org/tssdk'
-import { readFileSync } from 'node:fs'
+import { readFileSync } from 'fs'
 import enquirer from 'enquirer'
 import { ux } from '@oclif/core'
 

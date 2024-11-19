@@ -1,6 +1,6 @@
 import enquirer from 'enquirer'
-import { existsSync, promises as fsPromises } from 'node:fs'
-import { resolve } from 'node:path'
+import { existsSync, promises as fsPromises } from 'fs'
+import { resolve } from 'path'
 
 import { type CliConfig } from '../types/cli-config.type.js'
 

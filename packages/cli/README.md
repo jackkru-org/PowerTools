@@ -7,63 +7,59 @@ the power cli
 [![Downloads/week](https://img.shields.io/npm/dw/@jackkru-org/cli.svg)](https://npmjs.org/package/@jackkru-org/cli)
 
 <!-- toc -->
-
-- [@jackkru-org/cli](#jackkru-orgcli)
-- [Usage](#usage)
-- [Commands](#commands)
+* [@jackkru-org/cli](#jackkru-orgcli)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @jackkru-org/cli
 $ tpe COMMAND
 running command...
 $ tpe (--version)
-@jackkru-org/cli/1.12.13 linux-x64 node-v22.8.0
+@jackkru-org/cli/2.1.0 linux-x64 node-v22.8.0
 $ tpe --help [COMMAND]
 USAGE
   $ tpe COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`tpe acc get-balance`](#tpe-acc-get-balance)
-- [`tpe acc register`](#tpe-acc-register)
-- [`tpe acc send-sk`](#tpe-acc-send-sk)
-- [`tpe autocomplete [SHELL]`](#tpe-autocomplete-shell)
-- [`tpe container actions`](#tpe-container-actions)
-- [`tpe container create`](#tpe-container-create)
-- [`tpe container list`](#tpe-container-list)
-- [`tpe container update`](#tpe-container-update)
-- [`tpe container upload`](#tpe-container-upload)
-- [`tpe contract deploy`](#tpe-contract-deploy)
-- [`tpe contract get`](#tpe-contract-get)
-- [`tpe contract set`](#tpe-contract-set)
-- [`tpe help [COMMAND]`](#tpe-help-command)
-- [`tpe plugins`](#tpe-plugins)
-- [`tpe plugins add PLUGIN`](#tpe-plugins-add-plugin)
-- [`tpe plugins:inspect PLUGIN...`](#tpe-pluginsinspect-plugin)
-- [`tpe plugins install PLUGIN`](#tpe-plugins-install-plugin)
-- [`tpe plugins link PATH`](#tpe-plugins-link-path)
-- [`tpe plugins remove [PLUGIN]`](#tpe-plugins-remove-plugin)
-- [`tpe plugins reset`](#tpe-plugins-reset)
-- [`tpe plugins uninstall [PLUGIN]`](#tpe-plugins-uninstall-plugin)
-- [`tpe plugins unlink [PLUGIN]`](#tpe-plugins-unlink-plugin)
-- [`tpe plugins update`](#tpe-plugins-update)
-- [`tpe provider create`](#tpe-provider-create)
-- [`tpe provider list`](#tpe-provider-list)
-- [`tpe provider set-url`](#tpe-provider-set-url)
-- [`tpe storage tasklist`](#tpe-storage-tasklist)
-- [`tpe storage upload`](#tpe-storage-upload)
-- [`tpe update [CHANNEL]`](#tpe-update-channel)
+* [`tpe acc get-balance`](#tpe-acc-get-balance)
+* [`tpe acc register`](#tpe-acc-register)
+* [`tpe acc send-sk`](#tpe-acc-send-sk)
+* [`tpe autocomplete [SHELL]`](#tpe-autocomplete-shell)
+* [`tpe container actions`](#tpe-container-actions)
+* [`tpe container create`](#tpe-container-create)
+* [`tpe container list`](#tpe-container-list)
+* [`tpe container update`](#tpe-container-update)
+* [`tpe container upload`](#tpe-container-upload)
+* [`tpe contract deploy`](#tpe-contract-deploy)
+* [`tpe contract get`](#tpe-contract-get)
+* [`tpe contract set`](#tpe-contract-set)
+* [`tpe help [COMMAND]`](#tpe-help-command)
+* [`tpe plugins`](#tpe-plugins)
+* [`tpe plugins add PLUGIN`](#tpe-plugins-add-plugin)
+* [`tpe plugins:inspect PLUGIN...`](#tpe-pluginsinspect-plugin)
+* [`tpe plugins install PLUGIN`](#tpe-plugins-install-plugin)
+* [`tpe plugins link PATH`](#tpe-plugins-link-path)
+* [`tpe plugins remove [PLUGIN]`](#tpe-plugins-remove-plugin)
+* [`tpe plugins reset`](#tpe-plugins-reset)
+* [`tpe plugins uninstall [PLUGIN]`](#tpe-plugins-uninstall-plugin)
+* [`tpe plugins unlink [PLUGIN]`](#tpe-plugins-unlink-plugin)
+* [`tpe plugins update`](#tpe-plugins-update)
+* [`tpe provider create`](#tpe-provider-create)
+* [`tpe provider list`](#tpe-provider-list)
+* [`tpe provider set-url`](#tpe-provider-set-url)
+* [`tpe storage tasklist`](#tpe-storage-tasklist)
+* [`tpe storage upload`](#tpe-storage-upload)
+* [`tpe update [CHANNEL]`](#tpe-update-channel)
 
 ## `tpe acc get-balance`
 
@@ -94,7 +90,7 @@ EXAMPLES
   $ tpe acc get-balance --keyFilePath ./path/to/keyfile.pem --password mypassword
 ```
 
-_See code: [dist/esm/src/commands/acc/get-balance.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/acc/get-balance.js)_
+_See code: [dist/esm/src/commands/acc/get-balance.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/acc/get-balance.js)_
 
 ## `tpe acc register`
 
@@ -135,7 +131,7 @@ EXAMPLES
   Register a new account on a specified chain without saving the data to a file.
 ```
 
-_See code: [dist/esm/src/commands/acc/register.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/acc/register.js)_
+_See code: [dist/esm/src/commands/acc/register.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/acc/register.js)_
 
 ## `tpe acc send-sk`
 
@@ -171,7 +167,7 @@ EXAMPLES
   $ tpe acc send-sk --amount 100 --to AA100000001677748249 --keyFilePath ./path/to/keyfile.pem
 ```
 
-_See code: [dist/esm/src/commands/acc/send-sk.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/acc/send-sk.js)_
+_See code: [dist/esm/src/commands/acc/send-sk.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/acc/send-sk.js)_
 
 ## `tpe autocomplete [SHELL]`
 
@@ -235,7 +231,7 @@ EXAMPLES
   $ tpe container actions -m "container_getLogs" -p 1 -f ./path/to/keyfile.pem -s mypassword
 ```
 
-_See code: [dist/esm/src/commands/container/actions.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/container/actions.js)_
+_See code: [dist/esm/src/commands/container/actions.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/container/actions.js)_
 
 ## `tpe container create`
 
@@ -266,7 +262,7 @@ EXAMPLES
   $ tpe container create -k ./key.pem --password mypassword --containerName "NewContainer" --containerPassword containerpassword
 ```
 
-_See code: [dist/esm/src/commands/container/create.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/container/create.js)_
+_See code: [dist/esm/src/commands/container/create.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/container/create.js)_
 
 ## `tpe container list`
 
@@ -292,7 +288,7 @@ EXAMPLES
   $ tpe container list -k ./key.pem --password mypassword
 ```
 
-_See code: [dist/esm/src/commands/container/list.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/container/list.js)_
+_See code: [dist/esm/src/commands/container/list.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/container/list.js)_
 
 ## `tpe container update`
 
@@ -320,11 +316,11 @@ DESCRIPTION
 EXAMPLES
   $ tpe container update -k ./key.pem -p mypassword -i 123 -n "New Container Name" -f ./containerKey.pem -s containerpassword
 
-  $ tpe container update -k ./key.pem --password mypassword --containerId 123
+  $ tpe container update -k ./key.pem --password mypassword --containerId 123 
       --containerName "New Container Name" --containerKeyFilePath ./containerKey.pem --containerPassword containerpassword
 ```
 
-_See code: [dist/esm/src/commands/container/update.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/container/update.js)_
+_See code: [dist/esm/src/commands/container/update.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/container/update.js)_
 
 ## `tpe container upload`
 
@@ -357,7 +353,7 @@ EXAMPLES
   $ tpe container upload -i 123 -f ./key.pem -s mypassword -p ./files
 ```
 
-_See code: [dist/esm/src/commands/container/upload.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/container/upload.js)_
+_See code: [dist/esm/src/commands/container/upload.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/container/upload.js)_
 
 ## `tpe contract deploy`
 
@@ -391,7 +387,7 @@ EXAMPLES
   $ tpe contract deploy --abiPath ./path/to/abi.json --binPath ./path/to/bin --keyFilePath ./path/to/keyfile.pem --initParams "param1 param2"
 ```
 
-_See code: [dist/esm/src/commands/contract/deploy.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/contract/deploy.js)_
+_See code: [dist/esm/src/commands/contract/deploy.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/contract/deploy.js)_
 
 ## `tpe contract get`
 
@@ -418,7 +414,7 @@ EXAMPLES
   $ tpe contract get --abiPath ./path/to/abi.json --address AA100000001677748249 --method getInfo
 ```
 
-_See code: [dist/esm/src/commands/contract/get.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/contract/get.js)_
+_See code: [dist/esm/src/commands/contract/get.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/contract/get.js)_
 
 ## `tpe contract set`
 
@@ -445,16 +441,16 @@ DESCRIPTION
   Execute a method on a specified smart contract
 
 EXAMPLES
-  $ tpe contract set --abiPath ./path/to/abi.json
+  $ tpe contract set --abiPath ./path/to/abi.json 
       --address AA100000001677748249 --keyFilePath ./path/to/keyfile.pem --method set --params value1 --password mypassword
 
   $ tpe contract set -a ./path/to/abi.json -d AA100000001677748249 -k ./path/to/keyfile.pem -m set -r "value1 value2" -p mypassword
 
-  $ tpe contract set --abiPath ./path/to/abi.json
+  $ tpe contract set --abiPath ./path/to/abi.json 
       --address AA100000001677748249 --keyFilePath ./path/to/keyfile.pem --method setData --params "0x456 1 2 [1,2] {a: 1, b: 2} 1n"
 ```
 
-_See code: [dist/esm/src/commands/contract/set.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/contract/set.js)_
+_See code: [dist/esm/src/commands/contract/set.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/contract/set.js)_
 
 ## `tpe help [COMMAND]`
 
@@ -792,7 +788,7 @@ EXAMPLES
   $ tpe provider create -k ./key.pem --password mypassword --containerName "NewProvider" --containerPassword containerpassword
 ```
 
-_See code: [dist/esm/src/commands/provider/create.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/provider/create.js)_
+_See code: [dist/esm/src/commands/provider/create.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/provider/create.js)_
 
 ## `tpe provider list`
 
@@ -820,7 +816,7 @@ EXAMPLES
   $ tpe provider list --address 0x123...abc
 ```
 
-_See code: [dist/esm/src/commands/provider/list.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/provider/list.js)_
+_See code: [dist/esm/src/commands/provider/list.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/provider/list.js)_
 
 ## `tpe provider set-url`
 
@@ -851,7 +847,7 @@ EXAMPLES
   $ tpe provider set-url -k ./key.pem -i 123 -u "https://provider.example.com" --sponsorAddress 0xSponsorAddress
 ```
 
-_See code: [dist/esm/src/commands/provider/set-url.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/provider/set-url.js)_
+_See code: [dist/esm/src/commands/provider/set-url.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/provider/set-url.js)_
 
 ## `tpe storage tasklist`
 
@@ -876,7 +872,7 @@ EXAMPLES
   $ tpe storage tasklist ./tp-cli.json
 ```
 
-_See code: [dist/esm/src/commands/storage/tasklist.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/storage/tasklist.js)_
+_See code: [dist/esm/src/commands/storage/tasklist.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/storage/tasklist.js)_
 
 ## `tpe storage upload`
 
@@ -902,7 +898,7 @@ EXAMPLES
   $ tpe storage upload ./tp-cli.json
 ```
 
-_See code: [dist/esm/src/commands/storage/upload.js](https://github.com/thepower/PowerTools/blob/v1.12.13/dist/esm/src/commands/storage/upload.js)_
+_See code: [dist/esm/src/commands/storage/upload.js](https://github.com/thepower/PowerTools/blob/v2.1.0/dist/esm/src/commands/storage/upload.js)_
 
 ## `tpe update [CHANNEL]`
 
@@ -941,5 +937,4 @@ EXAMPLES
 ```
 
 _See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v4.6.10/src/commands/update.ts)_
-
 <!-- commandsstop -->

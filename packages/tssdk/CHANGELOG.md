@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.0
+
+### Minor Changes
+
+- fix gitignore
+
 ## 3.0.0
 
 ### Major Changes

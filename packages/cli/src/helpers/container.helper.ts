@@ -1,6 +1,6 @@
 import { ux } from '@oclif/core'
 import crypto from 'crypto'
-import { readFileSync } from 'node:fs'
+import { readFileSync } from 'fs'
 import enquirer from 'enquirer'
 
 export enum TaskState {
