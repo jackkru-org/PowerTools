@@ -1,5 +1,14 @@
 # Change Log
 
+## 2.1.1-canary.0
+
+### Patch Changes
+
+- [#20](https://github.com/jackkru-org/PowerTools/pull/20) [`acb38b7`](https://github.com/jackkru-org/PowerTools/commit/acb38b791863062defb8345c54f2ce7d07781cdf) Thanks [@jackkru69](https://github.com/jackkru69)! - test
+
+- Updated dependencies [[`acb38b7`](https://github.com/jackkru-org/PowerTools/commit/acb38b791863062defb8345c54f2ce7d07781cdf)]:
+  - @jackkru-org/tssdk@3.2.2-canary.0
+
 ## 2.1.0
 
 ### Minor Changes

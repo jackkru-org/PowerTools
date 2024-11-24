@@ -5,5 +5,7 @@
     "@jackkru-org/cli": "2.1.0",
     "@jackkru-org/tssdk": "3.1.0"
   },
-  "changesets": []
+  "changesets": [
+    "strong-lies-fold"
+  ]
 }
