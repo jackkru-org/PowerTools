@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.2.2-canary.1
+
+### Patch Changes
+
+- [#24](https://github.com/jackkru-org/PowerTools/pull/24) [`b937bf1`](https://github.com/jackkru-org/PowerTools/commit/b937bf1f8e4917828e1680a90c177f2c388ce5f5) Thanks [@jackkru69](https://github.com/jackkru69)! - yarn.lock
+
 ## 3.2.2-canary.0
 
 ### Patch Changes
