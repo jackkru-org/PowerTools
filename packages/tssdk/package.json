@@ -1,6 +1,6 @@
 {
   "name": "@jackkru-org/tssdk",
-  "version": "3.2.2-canary.0",
+  "version": "3.2.2-canary.1",
   "main": "./dist/esm/src/index.js",
   "types": "./dist/types/src/index.d.ts",
   "description": "thepower tssdk",

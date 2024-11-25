@@ -6,6 +6,7 @@
     "@jackkru-org/tssdk": "3.1.0"
   },
   "changesets": [
+    "fluffy-geckos-run",
     "strong-lies-fold"
   ]
 }
